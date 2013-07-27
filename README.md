@@ -5,7 +5,7 @@ Multivariative Simplicial Weight Interpolation / Extrapolation.
 
 This project is an implementation of four different interpolation and extrapolation technics with a few demos and utilities.
 
-![Screenshot](/assets/screenshot.phg "Screenshot")
+![Screenshot](/assets/screenshot.png "Screenshot")
 
 F_w - is the average weighted interpolation, also called baricentric. It is a global scheme.
 
@@ -17,7 +17,7 @@ F_s - simplicial weighted interpolation. It is local, and being used with approp
 
 Extrapolation provided for every scheme.
 
-![Extrapolation](/assets/figure_1.phg "Extrapolation")
+![Extrapolation](/assets/figure_1.png "Extrapolation")
 
 Some of the code is being ported to C# in my new project "Unpager": https://github.com/akalenuk/unpager
 
