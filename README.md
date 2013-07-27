@@ -23,4 +23,4 @@ Some of the code is being ported to C# in my new project "Unpager": https://gith
 
 There is one academic article on the topic translated in English and a couple in Ukrainian in the /docs folder.
 
-The code itself is poorly documented and there are basically no articles on the topic in english, so feel free to ask for any comments by email: mailto:akalenuk@gmail.com 
+The code itself is poorly documented and there is little matherial on the topic, so feel free to ask anything by email: akalenuk@gmail.com 
