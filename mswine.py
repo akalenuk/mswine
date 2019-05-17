@@ -657,14 +657,30 @@ def get_inS(dot,prj,pnt_set,  xyz,Sx,base_f,s_k):
         Up=0.0
         Dn=0.0
         for i in xrange(0,PSL):
+            sum_d = 0.
+            cur_d = 0.
+            for j in range(0, PSL):
+                new_pnt_set=[]
+                new_S=[]
+                for k in xrange(0,PSL):
+                    if k != j:
+                        new_pnt_set.append(pnt_set[k])
+                        new_S.append(xyz[pnt_set[k]])
+                new_prj = v_proj(prj,new_S)
+                dk = v_len(v_sub(new_prj,prj))
+                if i == j:
+                    cur_d = dk
+                sum_d += dk
+
             new_pnt_set=[]
             new_S=[]
             for j in xrange(0,PSL):
                 if j!=i:
-                    new_pnt_set.append(pnt_set[j]);
+                    new_pnt_set.append(pnt_set[j])
                     new_S.append(xyz[pnt_set[j]])            
             new_prj=v_proj(prj,new_S)
-            cur_k=s_k(v_len(v_sub(new_prj,prj)))
+#            cur_k=s_k(v_len(v_sub(new_prj,prj)))
+            cur_k = cur_d / sum_d
             ud=get_inS(dot,new_prj,new_pnt_set,  xyz,Sx,base_f,s_k)
             Up+=ud*cur_k
             Dn+=cur_k
