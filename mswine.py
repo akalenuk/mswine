@@ -870,8 +870,8 @@ if __name__ == '__main__':
     fi = get_linear_functions(xy, f_xy, s2) # basis functions
     test_2d()   # surface test
 
-    F = F_s       # interpolation scheme
-    fi = get_linear_functions(xyz, f_xyz, s3) # basis functions
-    test_3d()   # 3-manifold test
+#    F = F_s       # interpolation scheme
+#    fi = get_linear_functions(xyz, f_xyz, s3) # basis functions
+#    test_3d()   # 3-manifold test
 
     root.mainloop()
