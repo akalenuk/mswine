@@ -282,12 +282,12 @@ def v_proj_or(a,S, p0):
             a: Point to project.
             S: Simplex given by a list of its points.
 
-	Returns:
-	    Point of projection or p0 if projection does not lie in a 
+    Returns:
+        Point of projection or p0 if projection does not lie in a 
             simplex inner space
     '''
     ret=make_vector(len(a))
-    ret[0]=p0;
+    ret[0]=p0
 
     for b in S:
         if len(b)!=len(a): print "Vector sizes mismatch in v_proj"
@@ -456,10 +456,10 @@ def get_linear_functions(xyz,f,Sx):
         A=make_matrix(dimm+1)
         B=make_vector(dimm+1)
         for j in xrange(dimm+1):
-            pnt=Sx[i][j]-1;
+            pnt=Sx[i][j]-1
             for k in xrange(dimm):
                 A[j][k]=xyz[pnt][k]
-            A[j][dimm]=1.0;
+            A[j][dimm]=1.0
             B[j]=f[pnt]
         simplex_linears[i]=Gauss(A,B)
 
@@ -471,7 +471,7 @@ def get_linear_functions(xyz,f,Sx):
                     sx_N+=1
                     for l in xrange(0,dimm+1):
                         point_linears[i][l]+=simplex_linears[j][l]
-                    break;
+                    break
         if sx_N==0: print "error: point is not in simplex"
         point_linears[i]=map(lambda a:a/sx_N, point_linears[i])
 
@@ -559,8 +559,8 @@ def F_lex(dot, xyz,Sx,base_f,s_k):
             c_sx[i:i+1]=[]
             best_pack=get_nearest_simplex(dot,xyz,Sx,c_sx, best_pack)
     dot2=copy_vector(best_pack[1])
-    dot2[0]+=0.2;
-    dot2[1]+=0.2;
+    dot2[0]+=0.2
+    dot2[1]+=0.2
     DIMM=len(dot)
     Up=0.0
     Dn=0.0
@@ -580,7 +580,7 @@ def F_lex(dot, xyz,Sx,base_f,s_k):
                 Up+=base_f[Sx[sx][i]-1](dot)*v_k(crd[i], s_k)
                 Dn+=v_k(crd[i], s_k)
             return Up/Dn
-    return 0;
+    return 0
 
 
 def F_s(dot, xyz,Sx,base_f,s_k):
@@ -661,7 +661,7 @@ def get_inS(dot,prj,pnt_set,  xyz,Sx,base_f,s_k):
             new_S=[]
             for j in xrange(0,PSL):
                 if j!=i:
-                    new_pnt_set.append(pnt_set[j]);
+                    new_pnt_set.append(pnt_set[j])
                     new_S.append(xyz[pnt_set[j]])            
             new_prj=v_proj(prj,new_S)
             cur_k=s_k(v_len(v_sub(new_prj,prj)))
